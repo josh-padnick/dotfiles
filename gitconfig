@@ -1,8 +1,8 @@
 [alias]
-  prettylog = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  	prettylog = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 
 [color]
-  ui = true
+  	ui = true
 
 [core]
 	excludesfile = /opt/boxen/config/git/gitignore
@@ -17,28 +17,29 @@
 	tool = Kaleidoscope
 
 [github]
-	user = mitchellh
+	user = josh-padnick
 
 [push]
-	default = tracking
+	default = simple
 
 [sendemail]
 	smtpencryption = tls
 	smtpserver = smtp.gmail.com
-	smtpuser = mitchell.hashimoto@gmail.com
+	smtpuser = josh.padnick@gmail.com
 	smtpserverport = 587
 	chainreplyto = false
-	aliasesfile = /Users/mitchellh/.gitaliases
+	aliasesfile = /Users/josh/.gitaliases
 	aliasfiletype = mailrc
 
 [user]
-	name = Mitchell Hashimoto
-	email = mitchell.hashimoto@gmail.com
-	signingkey = A52F5B0A
+	name = Josh Padnick
+	email = josh.padnick@gmail.com
 
 [branch]
 	autosetuprebase = always
+
 [credential]
 	helper = osxkeychain
+
 [commit]
 	gpgsign = true
