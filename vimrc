@@ -55,7 +55,7 @@ Bundle "tpope/vim-eunuch"
 Bundle "tpope/vim-fugitive"
 
 " Personal bundles
-Bundle 'mitchellh/vim-misc'
+Bundle 'josh-padnick/vim-misc'
 
 " Turn on filetype plugin and indent loading so that loading the
 " vim-misc stuff below loads the proper files.
