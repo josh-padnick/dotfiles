@@ -5,10 +5,42 @@ which is the original repo from which this is forked.
 
 ## Installation
 
-    git clone git://github.com/mitchellh/dotfiles.git
+    git clone git://github.com/josh-padnick/dotfiles.git
     dotfiles/install.sh
 
 ## Manual Steps
+
+### Install from the CLI
+
+1. Install all the brews, taps, and casks:
+
+   ```bash
+   brew tap homebrew/bundle
+   brew bundle
+   ```
+
+1. Install vundle:
+
+   ```bash
+   git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+   ```
+
+1. Configure vim:
+   
+   1. `cd ~`
+   
+   2. ```bash
+      mkdir .vim .vim/bundle .vim/backup .vim/swap .vim/cache .vim/undo; git clone https://github.com/gmarik/vundle.git .vim/bundle/vundle
+      ```
+
+   3. Launch Vim and Run
+      ```bash
+      :BundleInstall
+      ```
+
+   4. Restart Vim
+
+### Install by downloading 
 
 1. Install my Keybase key.
 
@@ -48,8 +80,7 @@ which is the original repo from which this is forked.
 
 1. Install [Office 365](https://products.office.com/en-ie/office-365-home)
 
-### Private Repos
+### Install from private repos
 
 1. Install [gruntcreds](https://github.com/gruntwork-io/gruntcreds).
 
-1. 

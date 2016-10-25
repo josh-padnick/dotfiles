@@ -8,7 +8,7 @@ UNAME=$(uname)
 for name in *; do
   if [ ! $name == "README.md" -a ! $name == "install.sh" ]; then
     target="$name"
-    if [ ! $name == "nvim" ]; then
+    if [ ! $name == "nvim" -a ! $name == "Brewfile" ]; then
         target=".$name"
     fi
     target="$HOME/$target"
