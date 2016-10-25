@@ -1,6 +1,7 @@
 #!/bin/bash
 #
-# Mitchell Hashimoto's bash environment
+# Josh Padnick's bash environment, inspired by 
+# Mitchell Hashimoto's bash environment, which was 
 # Much taken from Ryan Tomayko (thanks!)
 
 # Basics
@@ -170,8 +171,6 @@ alias gs='git status'
 alias gt='git tag'
 
 # Others
-alias be='bundle exec'
-alias v='vagrant'
 
 # Usage: puniq [path]
 # Remove duplicate entries from a PATH style value while
