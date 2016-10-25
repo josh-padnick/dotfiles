@@ -27,18 +27,15 @@ which is the original repo from which this is forked.
 
 1. Configure vim:
    
-   1. `cd ~`
-   
-   2. ```bash
-      mkdir .vim .vim/bundle .vim/backup .vim/swap .vim/cache .vim/undo; git clone https://github.com/gmarik/vundle.git .vim/bundle/vundle
-      ```
+   ```bash
+   cd ~   
+   mkdir .vim .vim/bundle .vim/backup .vim/swap .vim/cache .vim/undo; git clone https://github.com/gmarik/vundle.git .vim/bundle/vundle
+   vim
+   # Run the following command in vim
+   :BundleInstall
+   ```
 
-   3. Launch Vim and Run
-      ```bash
-      :BundleInstall
-      ```
-
-   4. Restart Vim
+   Now restart Vim
 
 ### Install by downloading 
 
