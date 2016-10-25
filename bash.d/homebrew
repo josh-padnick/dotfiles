@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Prevent Homebrew from sending usage data to Google Analytics
+export HOMEBREW_NO_ANALYTICS=1

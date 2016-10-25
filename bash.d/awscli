@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Enable autocompletion for awscli
+test -f /usr/local/bin/aws && test -f /usr/local/bin/aws_completer && complete -C aws_completer aws

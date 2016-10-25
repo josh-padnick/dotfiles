@@ -26,6 +26,9 @@ which is the original repo from which this is forked.
 
 1. Install [Google Drive for Mac](https://www.google.ie/drive/download/)
 
+1. Install [Golang for Mac](https://golang.org/doc/install)
+   - Install Go into `$HOME/go`.
+
 1. Install [Transmit](https://panic.com/transmit/)
 
 1. Install [Balsamiq](https://balsamiq.com/)
@@ -44,3 +47,9 @@ which is the original repo from which this is forked.
 1. Install [1Password](https://1password.com/)
 
 1. Install [Office 365](https://products.office.com/en-ie/office-365-home)
+
+### Private Repos
+
+1. Install [gruntcreds](https://github.com/gruntwork-io/gruntcreds).
+
+1. 

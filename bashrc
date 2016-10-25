@@ -239,3 +239,10 @@ esac
 # Set default prompt if interactive
 test -n "$PS1" &&
 prompt_color
+
+#--------------------------------------------------------------------------------
+# Run the Fish Shell
+#--------------------------------------------------------------------------------
+#export fish_greeting=""
+#fish
+#fish ~/.fish_profile

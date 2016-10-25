@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Enable iTerm2 Shell Inegration
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
