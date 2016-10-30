@@ -6,4 +6,4 @@ nvim/plugged
 nvim/swap
 nvim/undo
 *.elc
-config/fish/fishd.*
+config/fish/fishd*
