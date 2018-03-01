@@ -7,3 +7,9 @@ nvim/swap
 nvim/undo
 *.elc
 config/fish/fishd*
+config/configstore/
+config/gcloud/
+config/gocode/
+
+# Secrets to backup separately
+gnupg/

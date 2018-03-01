@@ -1,7 +1,7 @@
 #!/bin/bash
 #
-# Josh Padnick's bash environment, inspired by 
-# Mitchell Hashimoto's bash environment, which was 
+# Josh Padnick's bash environment, inspired by
+# Mitchell Hashimoto's bash environment, which was
 # Much taken from Ryan Tomayko (thanks!)
 
 # Basics
@@ -239,6 +239,9 @@ esac
 # Set default prompt if interactive
 test -n "$PS1" &&
 prompt_color
+
+GPG_TTY=$(tty)
+export GPG_TTY
 
 #--------------------------------------------------------------------------------
 # Run the Fish Shell
