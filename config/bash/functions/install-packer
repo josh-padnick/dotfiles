@@ -1,0 +1,13 @@
+#!/bin/bash
+
+set -e
+
+version="$1"
+
+echo "Downloading Packer v$version"
+wget -O /tmp/packer.zip "https://releases.hashicorp.com/packer/${version}/packer_${version}_darwin_amd64.zip"
+unzip "/tmp/packer.zip"
+mv packer /usr/local/bin/packer 
+chmod u+x /usr/local/bin/packer 
+
+echo "Installation complete!"
