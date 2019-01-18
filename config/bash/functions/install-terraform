@@ -1,0 +1,13 @@
+#!/bin/bash
+
+set -e
+
+version="$1"
+
+echo "Downloading Terraform v$version"
+wget -O /tmp/terraform.zip "https://releases.hashicorp.com/terraform/${version}/terraform_${version}_darwin_amd64.zip"
+unzip "/tmp/terraform.zip"
+mv terraform /usr/local/bin/terraform
+chmod u+x /usr/local/bin/terraform
+
+echo "Installation complete!"

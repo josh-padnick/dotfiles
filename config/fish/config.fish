@@ -11,6 +11,9 @@ set -x GOROOT /usr/local/go
 # Enable go binaries to be in the PATH
 set -x PATH $PATH /Users/josh/go/bin
 
+# Enable pip-installed Python tools to be on the CLI
+set -x PATH $PATH /Users/josh/Library/Python/3.6/bin
+
 # Enable custom bash functions for handy things like launching IntelliJ IDEA from the CLI
 set -x PATH $PATH /repos/josh-padnick/dotfiles/config/bash/functions
 

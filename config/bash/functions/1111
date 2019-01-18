@@ -1,0 +1,33 @@
+#!/bin/bash
+
+#
+# Enable/Disable the 1.1.1.1 DNS settings per https://1.1.1.1/
+#
+# Usage:
+#   1111 add
+#   1111 del
+#
+
+set -e
+
+#
+subcommand="$1"
+
+function add_dns_servers {
+    local -r ip1="$1"
+    local -r ip2="$2"
+    local -r ip3="$3"
+    local -r ip4="$4"
+
+    echo "Adding DNS Servers $ip1, "$ip2, "$ip3, $ip4"
+    networksetup -setdnsservers Wi-Fi "$ip1" "$ip2" "$ip3" "$ip4"
+}
+
+function clear_dns_servers {
+    echo "Removing all added DNS Servers"
+    networksetup -setdnsservers Wi-Fi
+}
+
+add_dns_servers "1.1.1.1" "1.0.0.1" "2606:4700:4700::1111" "2606:4700:4700::1001"
+
+echo "Complete!"
