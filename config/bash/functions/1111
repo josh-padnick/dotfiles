@@ -25,9 +25,15 @@ function add_dns_servers {
 
 function clear_dns_servers {
     echo "Removing all added DNS Servers"
-    networksetup -setdnsservers Wi-Fi
+    networksetup -setdnsservers Wi-Fi "empty"
 }
 
-add_dns_servers "1.1.1.1" "1.0.0.1" "2606:4700:4700::1111" "2606:4700:4700::1001"
+if [[ "$subcommand" == "add" ]]; then
+    add_dns_servers "1.1.1.1" "1.0.0.1" "2606:4700:4700::1111" "2606:4700:4700::1001"
+elif [[ "$subcommand" == "del" ]]; then
+    clear_dns_servers
+else
+    echo "$subcommand not recognized. Usage: 1111 add | del"
+fi
 
 echo "Complete!"

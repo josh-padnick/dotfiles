@@ -1,0 +1,27 @@
+#!/bin/bash
+#
+# Setup the local environment and open the code editor for the github-terraform repo to
+# facilitate adding a new user to Gruntwork's GitHub repos
+#
+
+set -e
+
+customerName="$1"
+
+if [[ ! -d "/Users/josh/source/gruntwork/github-terraform/live/clients/$customerName" ]]; then
+    mkdir "/Users/josh/source/gruntwork/github-terraform/live/clients/$customerName"
+fi
+
+if [[ ! -f "/Users/josh/source/gruntwork/github-terraform/live/clients/$customerName/terraform.tfvars" ]]; then
+    cp "/Users/josh/source/gruntwork/github-terraform/live/clients/mckinsey/terraform.tfvars" "/Users/josh/source/gruntwork/github-terraform/live/clients/$customerName/terraform.tfvars"
+fi
+
+cd /Users/josh/source/gruntwork/github-terraform
+git checkout -b "$customerName"
+
+cd "/Users/josh/source/gruntwork/github-terraform/live/clients/$customerName"
+code . 
+
+echo "eval (pass gruntwork/tf-github)"
+echo "cd \"/Users/josh/source/gruntwork/github-terraform/live/clients/$customerName\""
+echo "houston exec phx -- terragrunt apply"
