@@ -13,14 +13,14 @@ if [[ ! -d "/Users/josh/source/gruntwork/github-terraform/live/clients/$customer
 fi
 
 if [[ ! -f "/Users/josh/source/gruntwork/github-terraform/live/clients/$customerName/terraform.tfvars" ]]; then
-    cp "/Users/josh/source/gruntwork/github-terraform/live/clients/mckinsey/terraform.tfvars" "/Users/josh/source/gruntwork/github-terraform/live/clients/$customerName/terraform.tfvars"
+    cp "/Users/josh/source/gruntwork/github-terraform/live/clients/forescout/terraform.tfvars" "/Users/josh/source/gruntwork/github-terraform/live/clients/$customerName/terraform.tfvars"
 fi
 
 cd /Users/josh/source/gruntwork/github-terraform
 git checkout -b "$customerName"
 
 cd "/Users/josh/source/gruntwork/github-terraform/live/clients/$customerName"
-code . 
+code .
 
 echo "eval (pass gruntwork/tf-github)"
 echo "cd \"/Users/josh/source/gruntwork/github-terraform/live/clients/$customerName\""

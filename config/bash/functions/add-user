@@ -14,10 +14,10 @@ TYPE_SUB_ONLY="subscription-only"
 PASS_PROP_ADD_USER_PASSWORD="gruntwork/zapier-password"
 PASS_PROP_ADD_USER_URL="gruntwork/zapier-url"
 
-first_name="$1"
-last_name="$2"
-email="$3"
-type="$4"
+type="$1"
+first_name="$2"
+last_name="$3"
+email="$4"
 
 function error_msg {
     local -r message="$1"
@@ -26,7 +26,7 @@ function error_msg {
 }
 
 function usage {
-    echo "Usage: add-user <first-name> <last-name> <email> <$TYPE_DED_SUPPORT | $TYPE_SUB_ONLY>"
+    echo "Usage: add-user <$TYPE_DED_SUPPORT | $TYPE_SUB_ONLY> <first-name> <last-name> <email>"
 }
 
 function validate_arg {
@@ -40,10 +40,10 @@ function validate_arg {
 }
 
 function add_user {
-    local -r first_name="$1"
-    local -r last_name="$2"
-    local -r email="$3"
-    local -r type="$4"
+    local -r type="$1"
+    local -r first_name="$2"
+    local -r last_name="$3"
+    local -r email="$4"
 
     curl \
     --request POST \
@@ -59,14 +59,14 @@ function add_user {
     $(pass $PASS_PROP_ADD_USER_URL)
 }
 
+validate_arg "<type>" "$type"
 validate_arg "<first-name>" "$first_name"
 validate_arg "<last-name>" "$last_name"
 validate_arg "<email>" "$email"
-validate_arg "<type>" "$type"
 
 if [[ "$type" != "$TYPE_DED_SUPPORT" ]] && [[ "$type" != "$TYPE_SUB_ONLY" ]]; then
    usage
    error_msg "Type was \"$type\", but must be one of $TYPE_DED_SUPPORT or $TYPE_SUB_ONLY."
 fi
 
-add_user "$first_name" "$last_name" "$email" "$type"
+add_user "$type" "$first_name" "$last_name" "$email"
