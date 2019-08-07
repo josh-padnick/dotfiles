@@ -8,6 +8,16 @@ set -e
 
 customerName="$1"
 
+echo ""
+echo "cd /Users/josh/source/gruntwork/github-terraform"
+echo ""
+
+cd /Users/josh/source/gruntwork/github-terraform
+git checkout master
+git pull
+git branch | grep -v "master" | xargs git branch -d
+git checkout -b "$customerName"
+
 if [[ ! -d "/Users/josh/source/gruntwork/github-terraform/live/clients/$customerName" ]]; then
     mkdir "/Users/josh/source/gruntwork/github-terraform/live/clients/$customerName"
 fi
@@ -15,9 +25,6 @@ fi
 if [[ ! -f "/Users/josh/source/gruntwork/github-terraform/live/clients/$customerName/terraform.tfvars" ]]; then
     cp "/Users/josh/source/gruntwork/github-terraform/live/clients/forescout/terraform.tfvars" "/Users/josh/source/gruntwork/github-terraform/live/clients/$customerName/terraform.tfvars"
 fi
-
-cd /Users/josh/source/gruntwork/github-terraform
-git checkout -b "$customerName"
 
 cd "/Users/josh/source/gruntwork/github-terraform/live/clients/$customerName"
 code .
