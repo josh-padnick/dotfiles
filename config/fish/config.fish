@@ -15,7 +15,7 @@ set -x PATH $PATH /Users/josh/go/bin
 set -x PATH $PATH /Users/josh/Library/Python/3.6/bin
 
 # Enable custom bash functions for handy things like launching IntelliJ IDEA from the CLI
-set -x PATH $PATH /repos/josh-padnick/dotfiles/config/bash/functions
+set -x PATH $PATH /Users/josh/source/josh-padnick/dotfiles/config/bash/functions
 
 # Run the Fish shell!
 set -x fish_greeting ""
