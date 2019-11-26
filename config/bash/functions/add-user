@@ -8,13 +8,16 @@ set -e
 
 USER_CREATOR_EMAIL="josh@gruntwork.io"
 
+TYPE_DED_SUPPORT_ABBR="pro"
 TYPE_DED_SUPPORT="dedicated-support"
+
+TYPE_SUB_ONLY_ABBR="std"
 TYPE_SUB_ONLY="subscription-only"
 
 PASS_PROP_ADD_USER_PASSWORD="gruntwork/zapier-password"
 PASS_PROP_ADD_USER_URL="gruntwork/zapier-url"
 
-type="$1"
+type_abbr="$1"
 first_name="$2"
 last_name="$3"
 email="$4"
@@ -44,6 +47,7 @@ function add_user {
     local -r first_name="$2"
     local -r last_name="$3"
     local -r email="$4"
+    local type
 
     curl \
     --request POST \
@@ -59,14 +63,16 @@ function add_user {
     $(pass $PASS_PROP_ADD_USER_URL)
 }
 
-validate_arg "<type>" "$type"
+validate_arg "<type>" "$type_abbr"
 validate_arg "<first-name>" "$first_name"
 validate_arg "<last-name>" "$last_name"
 validate_arg "<email>" "$email"
 
-if [[ "$type" != "$TYPE_DED_SUPPORT" ]] && [[ "$type" != "$TYPE_SUB_ONLY" ]]; then
+if [[ "$type_abbr" == "$TYPE_DED_SUPPORT_ABBR" ]]; then
+    add_user "$TYPE_DED_SUPPORT" "$first_name" "$last_name" "$email"    
+elif [[ "$type_abbr" == "$TYPE_SUB_ONLY_ABBR" ]]; then
+    add_user "$TYPE_SUB_ONLY" "$first_name" "$last_name" "$email"    
+else
    usage
-   error_msg "Type was \"$type\", but must be one of $TYPE_DED_SUPPORT or $TYPE_SUB_ONLY."
+   error_msg "Type was \"$type_abbr\", but must be one of $TYPE_DED_SUPPORT_SHORT or $TYPE_SUB_ONLY_SHORT."
 fi
-
-add_user "$type" "$first_name" "$last_name" "$email"
